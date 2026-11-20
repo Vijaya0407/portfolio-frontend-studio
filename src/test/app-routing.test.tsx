@@ -30,4 +30,22 @@ describe("App routing", () => {
       "Designed a grocery delivery application interface using Figma. Created user flows and UI screens for browsing, cart, checkout and order tracking.",
     ]);
   });
+
+  it("provides each project image and its case-study link", () => {
+    expect(portfolioProjects.map((project) => project.artworkImage)).toEqual([
+      "/verisight-case-study.png",
+      "/plantiva-case-study.png",
+      "/freshcart-case-study.png",
+    ]);
+    expect(portfolioProjects.map((project) => project.artworkAspectRatio)).toEqual([
+      863 / 579,
+      610 / 316,
+      590 / 476,
+    ]);
+    expect(portfolioProjects.map((project) => project.caseStudyUrl)).toEqual([
+      "https://www.figma.com/proto/VvburjjN77wZ0kD2Co3CzZ/project-1--team-6?node-id=31-16&starting-point-node-id=31%3A16&t=aOpHi6qJN8f6Xbp9-1",
+      "https://www.figma.com/design/vZ0hFwF7XI3vBnbUqVT86L/plant-project?node-id=0-1&t=qmklWSjevFNPUBw9-1",
+      "https://www.behance.net/gallery/255299187/Grocery-app-Case-study",
+    ]);
+  });
 });

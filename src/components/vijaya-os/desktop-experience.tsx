@@ -79,6 +79,21 @@ function getAppName(id: AppId) {
 }
 
 function ProjectArtwork({ project, galleryIndex }: { project: (typeof portfolioProjects)[number]; galleryIndex: number }) {
+  if (project.artworkImage) {
+    return (
+      <div
+        className={`project-artwork ${project.artClass} gallery-view-${galleryIndex}`}
+        style={project.artworkAspectRatio ? { aspectRatio: project.artworkAspectRatio, minHeight: 0 } : undefined}
+      >
+        <img
+          className="project-case-study-image"
+          src={project.artworkImage}
+          alt={`${project.name} case study preview`}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={`project-artwork ${project.artClass} gallery-view-${galleryIndex}`}>
       <div className="artwork-glow" aria-hidden="true" />
@@ -207,11 +222,19 @@ function ProjectStudio({
         <div className="project-focus"><span>DESIGN FOCUS</span><b>{project.focus}</b></div>
         <div className="project-tools"><span className="tool-chip">Figma</span><span className="tool-chip">User flows</span><span className="tool-chip">UI design</span></div>
         <Button asChild type="button" className="project-contact-button">
-          <a href={`mailto:${profile.email}?subject=${encodeURIComponent(`I'd love to hear about ${project.name}`)}`}>
-            Ask about this project <ArrowUpRight aria-hidden="true" />
+          <a
+            href={project.caseStudyUrl ?? `mailto:${profile.email}?subject=${encodeURIComponent(`I'd love to hear about ${project.name}`)}`}
+            target={project.caseStudyUrl ? "_blank" : undefined}
+            rel={project.caseStudyUrl ? "noopener noreferrer" : undefined}
+          >
+            About this project <ArrowUpRight aria-hidden="true" />
           </a>
         </Button>
-        <p className="project-availability">More case-study detail can be added as the portfolio grows.</p>
+        <p className="project-availability">
+          {project.caseStudyUrl
+            ? `Explore the full ${project.name} case study.`
+            : "More case-study detail can be added as the portfolio grows."}
+        </p>
       </aside>
     </div>
   );

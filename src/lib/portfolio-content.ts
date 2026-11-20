@@ -10,7 +10,19 @@ export const profile = {
     "Aspiring UI/UX Designer with a strong foundation in user-centered design, visual storytelling, and digital product design. Skilled in creating intuitive digital experiences, developing wireframes, and building interactive prototypes using Figma. Passionate about understanding user needs, improving usability, and creating impactful digital solutions through creative design and technology.",
 } as const;
 
-export const portfolioProjects = [
+type PortfolioProject = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  focus: string;
+  artClass: string;
+  artworkImage?: string;
+  artworkAspectRatio?: number;
+  caseStudyUrl?: string;
+};
+
+export const portfolioProjects: readonly PortfolioProject[] = [
   {
     id: "verisight",
     name: "VeriSight",
@@ -19,6 +31,9 @@ export const portfolioProjects = [
       "Designed intuitive interfaces and high-fidelity prototypes for a verification platform using Figma. Created wireframes and user flows to simplify verification tasks and improve usability.",
     focus: "Verification flows",
     artClass: "project-art-verisight",
+    artworkImage: "/verisight-case-study.png",
+    artworkAspectRatio: 863 / 579,
+    caseStudyUrl: "https://www.figma.com/proto/VvburjjN77wZ0kD2Co3CzZ/project-1--team-6?node-id=31-16&starting-point-node-id=31%3A16&t=aOpHi6qJN8f6Xbp9-1",
   },
   {
     id: "plantiva",
@@ -28,6 +43,9 @@ export const portfolioProjects = [
       "Designed a user-friendly plant ordering application that enables users to explore, select and purchase plants. Created interfaces to help users understand plant quality and product details before ordering.",
     focus: "Plant discovery",
     artClass: "project-art-plantiva",
+    artworkImage: "/plantiva-case-study.png",
+    artworkAspectRatio: 610 / 316,
+    caseStudyUrl: "https://www.figma.com/design/vZ0hFwF7XI3vBnbUqVT86L/plant-project?node-id=0-1&t=qmklWSjevFNPUBw9-1",
   },
   {
     id: "freshcart",
@@ -37,6 +55,9 @@ export const portfolioProjects = [
       "Designed a grocery delivery application interface using Figma. Created user flows and UI screens for browsing, cart, checkout and order tracking.",
     focus: "Grocery delivery",
     artClass: "project-art-freshcart",
+    artworkImage: "/freshcart-case-study.png",
+    artworkAspectRatio: 590 / 476,
+    caseStudyUrl: "https://www.behance.net/gallery/255299187/Grocery-app-Case-study",
   },
 ] as const;
 
