@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8965db" />
+      <stop offset="1" stop-color="#5737a7" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#background)" />
+  <circle cx="37" cy="11" r="3" fill="#d9f3dc" />
+  <text
+    x="23"
+    y="32"
+    fill="#fff"
+    font-family="Arial, sans-serif"
+    font-size="21"
+    font-weight="800"
+    letter-spacing="-2"
+    text-anchor="middle"
+  >DV</text>
+</svg>
